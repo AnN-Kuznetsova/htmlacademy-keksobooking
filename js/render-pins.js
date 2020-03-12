@@ -30,8 +30,9 @@
     });
 
     /* while (mapPins.querySelectorAll('.map__pin').length > 0) {
-      mapPins.removeChild(mapPins.querySelectorAll('.map__pin'));
+      mapPins.removeChild(mapPins.querySelector('.map__pin'));
     } */
+    // window.removeElements()
     mapPins.appendChild(fragment);
 
     /* mapPins.addEventListener('click', onMapPinsClick);
