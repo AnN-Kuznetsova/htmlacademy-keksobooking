@@ -1,17 +1,20 @@
 'use strict';
 
 (function () {
-  /* var map = document.querySelector('.map');
-
   var adverts = window.data();
 
-// window.console.log(adverts);
+  var pinMain = document.querySelector('.map__pin--main');
 
-  //window.renderPins(adverts);
-  //map.classList.remove('map--faded');
 
-  // window.renderCard(adverts[0]); */
+  var onPinMainMousedown = function () {
+    window.pageState.active();
+    window.renderPins(adverts);
+  };
 
-  window.inactiveState();
+  window.pageState.inactive();
 
+  pinMain.addEventListener('mousedown', onPinMainMousedown);
+
+
+  // window.renderCard(adverts[0]);
 })();
