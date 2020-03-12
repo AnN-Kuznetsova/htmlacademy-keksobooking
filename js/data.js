@@ -4,9 +4,14 @@
   var TYPE_VALUES = ['palace', 'flat', 'house', 'bungalo'];
   var CHACKIN_VALUES = ['12:00', '13:00', '14:00'];
   var FEATURES_VALUES = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
-  var PHOTOS_SRC = ['http://o0.github.io/assets/images/tokyo/hotel1.jpg','http://o0.github.io/assets/images/tokyo/hotel2.jpg', 'http://o0.github.io/assets/images/tokyo/hotel3.jpg'];
-  var Y_MIN = 130;
-  var Y_MAX = 630;
+  var PHOTOS_SRC = ['http://o0.github.io/assets/images/tokyo/hotel1.jpg', 'http://o0.github.io/assets/images/tokyo/hotel2.jpg', 'http://o0.github.io/assets/images/tokyo/hotel3.jpg'];
+  var BoundaryCoordinates = {
+    X_MIN: 0,
+    X_MAX: Math.floor(document.querySelector('.map__pins').getBoundingClientRect().width),
+    Y_MIN: 130,
+    Y_MAX: 630
+  };
+
 
   var Author = function (avatarNumber) {
     this.avatar = 'img/avatars/user0' + avatarNumber + '.png';
@@ -52,8 +57,8 @@
     while (photos.length === 0) {
       photos = window.random.array(PHOTOS_SRC);
     }
-    var x = window.random.numberOfRange(Y_MIN, Y_MAX);
-    var y = window.random.numberOfRange(Y_MIN, Y_MAX);
+    var x = window.random.numberOfRange(BoundaryCoordinates.X_MIN, BoundaryCoordinates.X_MAX);
+    var y = window.random.numberOfRange(BoundaryCoordinates.Y_MIN, BoundaryCoordinates.Y_MAX);
 
     return new Advert(index, title, address, price, type, rooms, guests, checkin, checkout, features, description, photos, x, y);
   };
@@ -63,10 +68,9 @@
     for (var i = 0; i < ADVERTS_AMOUNT; i++) {
       adverts.push(createNewAdvert(i + 1));
     }
-  //window.console.log(adverts);
     return adverts;
   };
 
-  //createAdverts();
+
   window.data = createAdverts;
 })();
