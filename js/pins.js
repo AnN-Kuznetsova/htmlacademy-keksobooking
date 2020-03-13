@@ -40,10 +40,6 @@
     //mapPins.addEventListener('keydown', onMapPinsKeydown); */
   };
 
-  /* var getLocation = function () {
-
-  }; */
-
 
   window.pins = {
     render: renderMapPins/* ,

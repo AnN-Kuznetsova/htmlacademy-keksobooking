@@ -1,6 +1,7 @@
 'use strict';
 
 (function () {
+  var NO_TABULATION = -1;
   /* var getFormElements = function () {
 
   }; */
@@ -28,6 +29,19 @@
     }
   };
 
+  var setReadOnly = function (element) {
+    element.setAttribute('readonly', true);
+  };
 
-  window.formControl = formControl;
+  var setTabindex = function (element, value) {
+    element.setAttribute('tabindex', value);
+  };
+
+
+  window.formControl = {
+    state: formControl,
+    setReadOnly: setReadOnly,
+    setTabindex: setTabindex,
+    NO_TABULATION: NO_TABULATION
+  };
 })();

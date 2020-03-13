@@ -5,7 +5,6 @@
 
   var pinMain = document.querySelector('.map__pin--main');
 
-
   var activatePage = function () {
     window.pageState.active();
     window.pins.render(adverts);
