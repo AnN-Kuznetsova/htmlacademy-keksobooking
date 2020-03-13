@@ -8,7 +8,8 @@
 
   var activatePage = function () {
     window.pageState.active();
-    window.renderPins(adverts);
+    window.pins.render(adverts);
+  window.console.log(window.dislocation.getLocation(pinMain, true));
   };
 
   var onPinMainMousedown = function (evt) {
@@ -28,6 +29,6 @@
   pinMain.addEventListener('mousedown', onPinMainMousedown);
   pinMain.addEventListener('keydown', onPinMainKeydown);
 
-
+window.console.log(window.dislocation.getLocation(pinMain, false));
   // window.renderCard(adverts[0]);
 })();

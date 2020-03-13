@@ -13,6 +13,7 @@
 
   var renderPins = [];
 
+
   var renderPin = function (pinData) {
     var pinElement = pinTemplate.cloneNode(true);
     pinElement.querySelector('img').src = pinData.author.avatar;
@@ -39,6 +40,13 @@
     //mapPins.addEventListener('keydown', onMapPinsKeydown); */
   };
 
+  /* var getLocation = function () {
 
-  window.renderPins = renderMapPins;
+  }; */
+
+
+  window.pins = {
+    render: renderMapPins/* ,
+    getLocation: getLocation */
+  };
 })();
