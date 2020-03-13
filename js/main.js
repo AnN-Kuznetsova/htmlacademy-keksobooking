@@ -9,7 +9,7 @@
   var activatePage = function () {
     window.pageState.active();
     window.pins.render(adverts);
-  window.console.log(window.dislocation.getLocation(pinMain, true));
+    window.dislocation.setAddress(pinMain, true);
   };
 
   var onPinMainMousedown = function (evt) {
@@ -25,10 +25,10 @@
   };
 
   window.pageState.inactive();
+  window.dislocation.setAddress(pinMain, false);
 
   pinMain.addEventListener('mousedown', onPinMainMousedown);
   pinMain.addEventListener('keydown', onPinMainKeydown);
 
-window.console.log(window.dislocation.getLocation(pinMain, false));
   // window.renderCard(adverts[0]);
 })();

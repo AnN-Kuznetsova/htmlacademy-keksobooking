@@ -8,6 +8,9 @@
     Y_MAX: 630
   };
 
+  var adForm = document.querySelector('.ad-form');
+  var addressInput = adForm.querySelector('#address');
+
   var Location = function (x, y) {
     this.x = x; // случайное число, координата x метки на карте. Значение ограничено размерами блока, в котором перетаскивается метка.
     this.y = y; // случайное число, координата y метки на карте от 130 до 630.
@@ -23,10 +26,15 @@
     return new window.dislocation.Сreate(x, y);
   };
 
+  var setAddress = function (pin, isPageActive) {
+    var location = getLocation(pin, isPageActive);
+    addressInput.value = location.x + ', ' + location.y;
+  };
+
 
   window.dislocation = {
     boundaryCoordinates: BoundaryCoordinates,
     Сreate: Location,
-    getLocation: getLocation
+    setAddress: setAddress
   };
 })();
