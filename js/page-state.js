@@ -21,8 +21,8 @@
     adForm.classList.remove('ad-form--disabled');
     window.formControl.state(adForm, 'enabled');
     window.formControl.state(mapFiltersForm, 'enabled');
-    window.formControl.setReadOnly(addressInput);
-    window.formControl.setTabindex(addressInput, NO_TABULATION);
+    window.formControl.setElementAttribute(addressInput, 'readonly', true);
+    window.formControl.setElementAttribute(addressInput, 'tabindex', NO_TABULATION);
   };
 
 

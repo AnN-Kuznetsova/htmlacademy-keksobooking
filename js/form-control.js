@@ -29,19 +29,14 @@
     }
   };
 
-  var setReadOnly = function (element) {
-    element.setAttribute('readonly', true);
-  };
-
-  var setTabindex = function (element, value) {
-    element.setAttribute('tabindex', value);
+  var setElementAttribute = function (element, attributeName, value) {
+    element.setAttribute(attributeName, value);
   };
 
 
   window.formControl = {
     state: formControl,
-    setReadOnly: setReadOnly,
-    setTabindex: setTabindex,
+    setElementAttribute: setElementAttribute,
     NO_TABULATION: NO_TABULATION
   };
 })();
